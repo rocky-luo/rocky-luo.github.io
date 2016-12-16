@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="java8里面引入了Lambda表达式，最近看了双十一买的《java8实战》里面有关Lambda的内容，列一下有关Lambda的几个要点，有助于其他学习者能快速地入门。
 首先写一个Lambda的例子：
-12345678910111213141516171819public class Apple &amp;#123;    private int weight;    private String col">
+public class Apple &amp;#123;    private int weight;    private String color;    public Apple(int weigh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java8之Lambda表达式">
 <meta property="og:url" content="http://yoursite.com/2016/12/16/java8之Lambda表达式/index.html">
 <meta property="og:site_name" content="Rocky">
 <meta property="og:description" content="java8里面引入了Lambda表达式，最近看了双十一买的《java8实战》里面有关Lambda的内容，列一下有关Lambda的几个要点，有助于其他学习者能快速地入门。
 首先写一个Lambda的例子：
-12345678910111213141516171819public class Apple &amp;#123;    private int weight;    private String col">
+public class Apple &amp;#123;    private int weight;    private String color;    public Apple(int weigh">
 <meta property="og:updated_time" content="2016-12-16T09:01:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java8之Lambda表达式">
 <meta name="twitter:description" content="java8里面引入了Lambda表达式，最近看了双十一买的《java8实战》里面有关Lambda的内容，列一下有关Lambda的几个要点，有助于其他学习者能快速地入门。
 首先写一个Lambda的例子：
-12345678910111213141516171819public class Apple &amp;#123;    private int weight;    private String col">
+public class Apple &amp;#123;    private int weight;    private String color;    public Apple(int weigh">
   
     <link rel="alternate" href="/atom.xml" title="Rocky" type="application/atom+xml">
   
@@ -62,9 +62,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -101,30 +101,30 @@
       
         <p>java8里面引入了Lambda表达式，最近看了双十一买的《java8实战》里面有关Lambda的内容，列一下有关Lambda的几个要点，有助于其他学习者能快速地入门。</p>
 <p>首先写一个Lambda的例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> weight;</div><div class="line">    <span class="keyword">private</span> String color;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">(<span class="keyword">int</span> weight, String color)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.weight = weight;</div><div class="line">        <span class="keyword">this</span>.color = color;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">filter</span><span class="params">(Apple apple,Predicate&lt;Apple&gt; predicate)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (predicate.test(apple))&#123;</div><div class="line">            System.out.println(<span class="string">"this apple is a good one"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        BiFunction&lt;Integer, String, Apple&gt; supplier = (w, c) -&gt; <span class="keyword">new</span> Apple(w, c);</div><div class="line">        Apple.filter(supplier.apply(<span class="number">50</span>, <span class="string">"red"</span>), (a) -&gt; a.weight &gt; <span class="number">30</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> weight;</div><div class="line">    <span class="keyword">private</span> String color;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">(<span class="keyword">int</span> weight, String color)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.weight = weight;</div><div class="line">        <span class="keyword">this</span>.color = color;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">filter</span><span class="params">(Apple apple,Predicate&lt;Apple&gt; predicate)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (predicate.test(apple))&#123;</div><div class="line">            System.out.println(<span class="string">"this apple is a good one"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        BiFunction&lt;Integer, String, Apple&gt; supplier = (w, c) -&gt; <span class="keyword">new</span> Apple(w, c);</div><div class="line">        Apple.filter(supplier.apply(<span class="number">50</span>, <span class="string">"red"</span>), (a) -&gt; a.weight &gt; <span class="number">30</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面的Apple对象里面有一个filter方法，该方法用于判断某个苹果是否是好苹果</p>
 <p>基本上有经验的人，大概看了上面这段代码，能够猜出来，苹果的重量 &gt; 30 的苹果是好苹果，下面就根据这段代码来具体看一看Lambda表达式</p>
 <h3 id="函数描述符"><a href="#函数描述符" class="headerlink" title="函数描述符"></a>函数描述符</h3><p>函数描述符基本上就是函数的签名，但是在java里面函数签名应该是不包含函数的返回值的，也就是说两个名字相同，参数也相同，但是返回值不同的方法实际上是不能同时存在的，因为他们函数签名一样，但是在Lambda表达式里面，函数描述符包括函数的参数和返回值，举个例子,上面的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(w, c) -&gt; new Apple(w, c);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">(w, c) -&gt; new Apple(w, c);</div></pre></td></tr></table></figure>
 <p>实际上省略和函数参数类型，完整的写法应该是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(int w, String c) -&gt; new Apple(w, c);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">(int w, String c) -&gt; new Apple(w, c);</div></pre></td></tr></table></figure>
 <p>函数签名其实就是(int, String) -&gt; Apple,意思是函数参数是int和String，返回值是Apple，之所以能省略，是应为通过BiFunction里面的方法能够推断出这些参数是什么类型，同理， </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(a) -&gt; a.weight &gt; 30</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">(a) -&gt; a.weight &gt; 30</div></pre></td></tr></table></figure>
 <p>的函数签名是(Apple)-&gt;boolean</p>
 <h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>看了上面的代码，当时我就有个疑问是一个方法是怎么能够转换成一个类的。实际上在java8里面新增了一个函数式接口的概念，函数式接口的意思就是只有一个抽象方法的接口，这样的话一个方法如果和该函数式接口的抽象方法有一样的函数描述符的话，方法就可以转化成一个类。</p>
 <p>java8里面接口里面的方法有了较大的变化，接口里的方法可以有默认的实现，用<strong>default</strong>关键字修饰，还可以有静态方法。。。</p>
 <p>比如我们可以写一个这样的接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@FunctionalInterface</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Facade</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">interface1</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">interface2</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"this is static fun"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">interface3</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"this is default interface"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@FunctionalInterface</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Facade</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">interface1</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">interface2</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"this is static fun"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">interface3</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"this is default interface"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>@FunctionalInterface</strong>注解的意思是表明这是一个函数式接口和@Override类似</p>
 <h3 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h3><p>如果我已有一个方法，而我又想在某个地方传递这个方法，就需要用到方法引用，比如说最开始的代码，我们可以通过方法引用改写为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> weight;</div><div class="line">    <span class="keyword">private</span> String color;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">(<span class="keyword">int</span> weight, String color)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.weight = weight;</div><div class="line">        <span class="keyword">this</span>.color = color;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">filter</span><span class="params">(Apple apple,Predicate&lt;Apple&gt; predicate)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (predicate.test(apple))&#123;</div><div class="line">            System.out.println(<span class="string">"this apple is a good one"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        BiFunction&lt;Integer, String, Apple&gt; supplier = Apple::<span class="keyword">new</span>;</div><div class="line">        Apple.filter(supplier.apply(<span class="number">50</span>, <span class="string">"red"</span>), Apple::GoodWeight);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">GoodWeight</span><span class="params">(Apple a)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> a.weight &gt; <span class="number">30</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> weight;</div><div class="line">    <span class="keyword">private</span> String color;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">(<span class="keyword">int</span> weight, String color)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.weight = weight;</div><div class="line">        <span class="keyword">this</span>.color = color;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">filter</span><span class="params">(Apple apple,Predicate&lt;Apple&gt; predicate)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (predicate.test(apple))&#123;</div><div class="line">            System.out.println(<span class="string">"this apple is a good one"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        BiFunction&lt;Integer, String, Apple&gt; supplier = Apple::<span class="keyword">new</span>;</div><div class="line">        Apple.filter(supplier.apply(<span class="number">50</span>, <span class="string">"red"</span>), Apple::GoodWeight);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">GoodWeight</span><span class="params">(Apple a)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> a.weight &gt; <span class="number">30</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>Apple::new</strong>是构造函数的引用，<strong>Apple::GoodWeight</strong>是方法<strong>boolean GoodWeight(Apple a)</strong>的引用</p>
 <p>关于方法引用这块，还有其他几种情况，我自己的感觉是刚开始用，感觉一直不太适应，这个语法糖实在是有点甜。。。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/16/java8之Lambda表达式/" data-id="ciwrjyelo0001wjuof3byc438" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/12/16/java8之Lambda表达式/" data-id="ciwrklhvp0001yjuowjowh0dn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java8/">java8</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lambda/">lambda</a></li></ul>
@@ -137,7 +137,7 @@
   
   
     <a href="/2016/12/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -152,7 +152,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java8/">java8</a></li></ul>
     </div>
@@ -162,7 +162,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java8/">java8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/">lambda</a></li></ul>
     </div>
@@ -172,7 +172,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/java8/" style="font-size: 10px;">java8</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a>
     </div>
@@ -191,7 +191,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -216,7 +216,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 rocky<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
